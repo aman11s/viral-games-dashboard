@@ -2,7 +2,9 @@
 
 /* CSS Variables */
 :root {
-  --app-bg-color: #f6f8fa;
+  --app-bg-color: #e7f1fb;
+  --white-color: #fff;
+  --primary-btn-color: #4992f0;
 }
 
 /* Reset Default */

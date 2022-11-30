@@ -1,0 +1,16 @@
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: var(--primary-btn-color);
+  color: var(--white-color);
+}
