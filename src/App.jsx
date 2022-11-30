@@ -1,9 +1,10 @@
 import "./App.css";
+import { Login } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <h1>Simple Viral Games</h1>
+      <Login />
     </div>
   );
 }
