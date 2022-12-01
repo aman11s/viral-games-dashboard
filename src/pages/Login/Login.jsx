@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context";
 import "./Login.css";
 
@@ -13,6 +14,7 @@ const initialFormData = {
 };
 export const Login = () => {
   const { setIsLoggedIn } = useAuth();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState(initialFormData);
 
@@ -22,6 +24,7 @@ export const Login = () => {
 
     if (username === "aman11s" && password === "amansingh") {
       setIsLoggedIn(true);
+      navigate("/");
     }
   };
 

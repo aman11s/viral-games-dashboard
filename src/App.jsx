@@ -1,10 +1,20 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Login } from "./pages";
+import { RequiresAuth } from "./components";
+import { Dashboard, Login } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Routes>
+        {/* Public Route */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Private Route */}
+        <Route element={<RequiresAuth />}>
+          <Route path="/" element={<Dashboard />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

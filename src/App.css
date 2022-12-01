@@ -1,6 +1,12 @@
 input {
   font-family: inherit;
   font-size: inherit;
+  padding: 5px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .btn {
