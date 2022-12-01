@@ -5,6 +5,7 @@
   --app-bg-color: #e7f1fb;
   --white-color: #fff;
   --primary-btn-color: #4992f0;
+  --yellow-color: #f2d548;
 }
 
 /* Reset Default */
@@ -17,6 +18,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--app-bg-color);
+  user-select: none;
 }
 
 /* Utility Classes */

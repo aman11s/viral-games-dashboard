@@ -20,3 +20,7 @@ button {
   background-color: var(--primary-btn-color);
   color: var(--white-color);
 }
+
+.hide {
+  display: none;
+}
