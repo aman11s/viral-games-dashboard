@@ -13,7 +13,7 @@ const initialFormData = {
   password: "",
 };
 export const Login = () => {
-  const { setIsLoggedIn } = useAuth();
+  const { isUserLoggedIn } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState(initialFormData);
@@ -23,7 +23,7 @@ export const Login = () => {
     const { username, password } = formData;
 
     if (username === "aman11s" && password === "amansingh") {
-      setIsLoggedIn(true);
+      isUserLoggedIn(true);
       navigate("/");
     }
   };
