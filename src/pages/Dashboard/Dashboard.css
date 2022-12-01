@@ -1,0 +1,49 @@
+.dashboard-title {
+  text-align: center;
+}
+
+.games-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.game {
+  background-color: var(--yellow-color);
+  font-size: 1.2rem;
+  padding: 1rem;
+  min-width: 15rem;
+  min-height: 6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.game-name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+}
+
+.game-form {
+  background-color: var(--app-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 20rem;
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 15% auto;
+}
