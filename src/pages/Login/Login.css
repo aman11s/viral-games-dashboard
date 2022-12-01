@@ -15,3 +15,7 @@
 .login-form button {
   display: block;
 }
+
+.login-form button {
+  width: 100%;
+}
