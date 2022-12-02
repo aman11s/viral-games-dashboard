@@ -8,8 +8,10 @@ const initialFormData = {
   author: "",
 };
 
-export const GameForm = ({ setOpenModal }) => {
-  const [formData, setFormData] = useState(initialFormData);
+export const GameForm = ({ setOpenModal, editModal, editGameData }) => {
+  const intialState = editModal ? editGameData : initialFormData;
+
+  const [formData, setFormData] = useState(intialState);
 
   const { gameDispatch } = useGames();
 

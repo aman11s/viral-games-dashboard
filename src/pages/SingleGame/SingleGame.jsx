@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGames } from "../../context";
 import { format, parseISO } from "date-fns";
+import { GameForm } from "../../components";
 import "./SingleGame.css";
 
 export const SingleGame = () => {
@@ -10,17 +11,42 @@ export const SingleGame = () => {
     gameState: { games },
   } = useGames();
 
+  const [openModal, setOpenModal] = useState(false);
+  const opneFormModal = () => setOpenModal(true);
+  const closeFormModal = (e) => {
+    if (
+      e.target.classList.contains("form-modal") &&
+      e.target.tagName === "DIV"
+    ) {
+      setOpenModal(false);
+    }
+  };
+
   const foundGame = games.find(({ id }) => id === gameId);
 
   const { name, author, published_date, url } = foundGame;
 
   const date = format(parseISO(published_date), "PPpp");
 
+  const editGameData = { name, url, author };
+
   return (
     <>
       <h1 className="my-4 text-center">Game Details</h1>
       <div className="game-details mx-auto">
-        <button className="btn secondary-btn">Edit</button>
+        <button onClick={opneFormModal} className="btn secondary-btn edit-btn">
+          Edit
+        </button>
+        <div
+          onClick={closeFormModal}
+          className={`form-modal ${!openModal && "hide"}`}
+        >
+          <GameForm
+            setOpenModal={setOpenModal}
+            editModal={true}
+            editGameData={editGameData}
+          />
+        </div>
         <div>
           <span className="game-key">Game Name:</span> {name}
         </div>
