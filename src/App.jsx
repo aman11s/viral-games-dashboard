@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { RequiresAuth } from "./components";
-import { Dashboard, Login } from "./pages";
+import { Dashboard, Login, SingleGame } from "./pages";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         {/* Private Route */}
         <Route element={<RequiresAuth />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/game/:gameId" element={<SingleGame />} />
         </Route>
       </Routes>
     </div>

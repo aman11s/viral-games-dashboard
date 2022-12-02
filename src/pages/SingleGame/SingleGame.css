@@ -1,0 +1,15 @@
+.game-details {
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 5px;
+  max-width: 30rem;
+  font-size: 1.2rem;
+}
+
+.game-key {
+  text-decoration: underline;
+}

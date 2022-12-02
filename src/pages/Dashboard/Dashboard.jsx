@@ -3,6 +3,7 @@ import { GameForm } from "../../components";
 import { useGames } from "../../context";
 import { BiTrash } from "react-icons/bi";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 export const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -10,6 +11,8 @@ export const Dashboard = () => {
   const {
     gameState: { games },
   } = useGames();
+
+  const navigate = useNavigate();
 
   const closeFormModal = (e) => {
     if (
@@ -23,12 +26,16 @@ export const Dashboard = () => {
 
   return (
     <>
-      <h1 className="my-4 dashboard-title">Games Dashboard</h1>
+      <h1 className="my-4 text-center">Games Dashboard</h1>
       <div className="games-wrapper">
         {games?.map((game) => {
           const { id, name } = game;
           return (
-            <div key={id} className="game">
+            <div
+              key={id}
+              onClick={() => navigate(`/game/${id}`)}
+              className="game"
+            >
               <div className="game-name">{name}</div>
               <div className="delete-icon">
                 <BiTrash />
