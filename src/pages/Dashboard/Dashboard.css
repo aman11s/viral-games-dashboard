@@ -27,6 +27,22 @@
   transform: translate(-50%, -50%);
 }
 
+.delete-icon {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
 .form-modal {
   position: fixed;
   top: 0;

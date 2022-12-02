@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GameForm } from "../../components";
 import { useGames } from "../../context";
+import { BiTrash } from "react-icons/bi";
 import "./Dashboard.css";
 
 export const Dashboard = () => {
@@ -29,6 +30,9 @@ export const Dashboard = () => {
           return (
             <div key={id} className="game">
               <div className="game-name">{name}</div>
+              <div className="delete-icon">
+                <BiTrash />
+              </div>
             </div>
           );
         })}
