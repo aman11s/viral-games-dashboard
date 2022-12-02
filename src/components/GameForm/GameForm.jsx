@@ -8,7 +8,12 @@ const initialFormData = {
   author: "",
 };
 
-export const GameForm = ({ setOpenModal, editModal, editGameData }) => {
+export const GameForm = ({
+  setOpenModal,
+  editModal,
+  editGameData,
+  editGameId,
+}) => {
   const intialState = editModal ? editGameData : initialFormData;
 
   const [formData, setFormData] = useState(intialState);
@@ -21,19 +26,27 @@ export const GameForm = ({ setOpenModal, editModal, editGameData }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    formData.id = uuid();
-    formData.published_date = new Date();
-    gameDispatch({ type: "ADD_NEW_GAME", payload: { new_game: formData } });
-    setFormData(initialFormData);
+    if (editModal) {
+      gameDispatch({
+        type: "EDIT_GAME",
+        payload: { edit_game: formData, edit_game_id: editGameId },
+      });
+    } else {
+      formData.id = uuid();
+      formData.published_date = new Date().toISOString();
+      gameDispatch({ type: "ADD_NEW_GAME", payload: { new_game: formData } });
+      setFormData(initialFormData);
+    }
     setOpenModal(false);
   };
 
   return (
     <form onSubmit={submitHandler} className="game-form">
-      <h2>Create New Game</h2>
+      <h2>{editModal ? "Edit Game" : "Create New Game"}</h2>
       <input
         onChange={changeHandler}
         name="name"
+        required
         value={formData.name}
         type="text"
         placeholder="Enter game name"
@@ -41,6 +54,7 @@ export const GameForm = ({ setOpenModal, editModal, editGameData }) => {
       <input
         onChange={changeHandler}
         name="url"
+        required
         value={formData.url}
         type="text"
         placeholder="Enter game url"
@@ -48,6 +62,7 @@ export const GameForm = ({ setOpenModal, editModal, editGameData }) => {
       <input
         onChange={changeHandler}
         name="author"
+        required
         value={formData.author}
         type="text"
         placeholder="Enter author name"

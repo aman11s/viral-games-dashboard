@@ -45,6 +45,7 @@ export const SingleGame = () => {
             setOpenModal={setOpenModal}
             editModal={true}
             editGameData={editGameData}
+            editGameId={gameId}
           />
         </div>
         <div>
