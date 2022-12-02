@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGames } from "../../context";
 import { format, parseISO } from "date-fns";
 import { GameForm } from "../../components";
+import { MdOutlineArrowBack } from "react-icons/md";
 import "./SingleGame.css";
 
 export const SingleGame = () => {
@@ -32,7 +33,12 @@ export const SingleGame = () => {
 
   return (
     <>
-      <h1 className="my-4 text-center">Game Details</h1>
+      <div className="single-game-header">
+        <Link to="/">
+          <MdOutlineArrowBack size={40} className="back-icon" />
+        </Link>
+        <h1 className="my-4 text-center">Game Details</h1>
+      </div>
       <div className="game-details mx-auto">
         <button onClick={opneFormModal} className="btn secondary-btn edit-btn">
           Edit

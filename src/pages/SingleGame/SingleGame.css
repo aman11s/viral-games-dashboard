@@ -1,3 +1,12 @@
+.single-game-header {
+  position: relative;
+}
+
+.back-icon {
+  position: absolute;
+  left: 2rem;
+}
+
 .game-details {
   background-color: var(--white-color);
   display: flex;
