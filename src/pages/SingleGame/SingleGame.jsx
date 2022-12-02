@@ -58,15 +58,15 @@ export const SingleGame = () => {
           <span className="game-key">Game Name:</span> {name}
         </div>
         <div>
-          <span className="game-key">Author Name:</span> {author}
-        </div>
-
-        <div>
-          <span className="game-key">Link:</span>{" "}
+          <span className="game-key">URL:</span>{" "}
           <a href={url} target="_blank" rel="noreferrer">
             {url}
           </a>
         </div>
+        <div>
+          <span className="game-key">Author Name:</span> {author}
+        </div>
+
         <div>
           <span className="game-key">Published date:</span> {date}
         </div>
