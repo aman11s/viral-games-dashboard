@@ -43,30 +43,42 @@ export const GameForm = ({
   return (
     <form onSubmit={submitHandler} className="game-form">
       <h2>{editModal ? "Edit Game" : "Create New Game"}</h2>
-      <input
-        onChange={changeHandler}
-        name="name"
-        required
-        value={formData.name}
-        type="text"
-        placeholder="Enter game name"
-      />
-      <input
-        onChange={changeHandler}
-        name="url"
-        required
-        value={formData.url}
-        type="text"
-        placeholder="Enter game url"
-      />
-      <input
-        onChange={changeHandler}
-        name="author"
-        required
-        value={formData.author}
-        type="text"
-        placeholder="Enter author name"
-      />
+      <label>
+        <div>Name</div>
+        <input
+          onChange={changeHandler}
+          name="name"
+          required
+          value={formData.name}
+          type="text"
+          placeholder="Enter game name"
+        />
+      </label>
+
+      <label>
+        <div>URL</div>
+        <input
+          onChange={changeHandler}
+          name="url"
+          required
+          value={formData.url}
+          type="text"
+          placeholder="Enter game url"
+        />
+      </label>
+
+      <label>
+        <div>Author</div>
+        <input
+          onChange={changeHandler}
+          name="author"
+          required
+          value={formData.author}
+          type="text"
+          placeholder="Enter author name"
+        />
+      </label>
+
       <button className="btn primary-btn">Submit</button>
     </form>
   );
