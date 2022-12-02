@@ -37,4 +37,5 @@ button {
   position: absolute;
   right: 2rem;
   background-color: var(--error-color);
+  z-index: 1;
 }
