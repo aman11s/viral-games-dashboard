@@ -4,7 +4,7 @@ const authContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("isLoggedIn") || false
+    JSON.parse(localStorage.getItem("isLoggedIn")) || false
   );
 
   const isUserLoggedIn = (loginFlag) => {
