@@ -8,6 +8,13 @@
   border-radius: 5px;
   max-width: 30rem;
   font-size: 1.2rem;
+  position: relative;
+}
+
+.game-details button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .game-key {

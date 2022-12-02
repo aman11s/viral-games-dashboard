@@ -20,6 +20,7 @@ export const SingleGame = () => {
     <>
       <h1 className="my-4 text-center">Game Details</h1>
       <div className="game-details mx-auto">
+        <button className="btn secondary-btn">Edit</button>
         <div>
           <span className="game-key">Game Name:</span> {name}
         </div>
