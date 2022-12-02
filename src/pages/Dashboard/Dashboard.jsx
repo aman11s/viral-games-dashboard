@@ -10,6 +10,7 @@ export const Dashboard = () => {
 
   const {
     gameState: { games },
+    gameDispatch,
   } = useGames();
 
   const navigate = useNavigate();
@@ -24,6 +25,14 @@ export const Dashboard = () => {
   };
   const opneFormModal = () => setOpenModal(true);
 
+  const deleteGameHandler = (e, gameId) => {
+    e.stopPropagation();
+    gameDispatch({
+      type: "DELETE_GAME",
+      payload: { delete_game_id: gameId },
+    });
+  };
+
   return (
     <>
       <h1 className="my-4 text-center">Games Dashboard</h1>
@@ -37,7 +46,10 @@ export const Dashboard = () => {
               className="game"
             >
               <div className="game-name">{name}</div>
-              <div className="delete-icon">
+              <div
+                onClick={(e) => deleteGameHandler(e, id)}
+                className="delete-icon"
+              >
                 <BiTrash />
               </div>
             </div>

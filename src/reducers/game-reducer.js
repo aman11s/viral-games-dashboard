@@ -14,6 +14,12 @@ export const gameReducer = (state, action) => {
         ),
       };
 
+    case "DELETE_GAME":
+      return {
+        ...state,
+        games: state.games.filter(({ id }) => id !== payload.delete_game_id),
+      };
+
     default:
       return state;
   }
